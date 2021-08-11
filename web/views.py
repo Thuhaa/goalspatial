@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Project, Course
+from django.shortcuts import render, redirect
+from .models import Project, Course, Message
+from django.contrib import messages
 
 def homepage_view(request):
 	return render(request, 'web/index.html')
@@ -18,5 +19,10 @@ def about_view(request):
 	return render(request, 'web/About.html')
 
 def contact_view(request):
+	if request.method == "POST":
+		email = request.POST.get('email')
+		name = request.POST.get('name')
+		text = request.POST.get('message')
+		message = Message.objects.create(email = email, name = name, text = text)
+		return redirect('homepage')
 	return render(request, 'web/Contact.html')
-# Create your views here.

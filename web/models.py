@@ -27,3 +27,17 @@ class Project(models.Model):
 
 	def __str__(self):
 		return self.title
+
+class Message(models.Model):
+	email = models.CharField(max_length=100)
+	name = models.CharField(max_length=100)
+	text = models.TextField()
+	received = models.BooleanField(default=True)
+	replied = models.BooleanField(default=False)
+	date_created = models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+		return self.email
+
+	class Meta:
+		verbose_name_plural = "Messages"

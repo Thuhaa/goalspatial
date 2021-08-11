@@ -73,7 +73,8 @@
               <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-white u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
                   <div class="u-form u-form-1">
-                    <form action="#" method="POST" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form">
+                    <form action="{% url 'contact-us' %}" method="POST" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form">
+                      {% csrf_token %}
                       <div class="u-form-email u-form-group u-form-partition-factor-2">
                         <label for="email-8268" class="u-form-control-hidden u-label">Email</label>
                         <input type="email" placeholder="Enter a valid email address" id="email-8268" name="email" class="u-border-2 u-border-palette-5-dark-2 u-input u-input-rectangle" required="">
@@ -91,7 +92,7 @@
                         <input type="submit" value="submit" class="u-form-control-hidden">
                       </div>
                       <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                      <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                      <div class="u-form-send-error u-form-send-message"> Thank you! Your message has been sent. Go to <a href="{% url 'homepage' %}">Home</a></div>
                       <input type="hidden" value="" name="recaptchaResponse">
                     </form>
                   </div>
