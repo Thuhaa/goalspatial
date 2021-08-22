@@ -1,4 +1,4 @@
-restaurants_json = {
+var restaurants_json = {
   "type": "FeatureCollection",
   "features": [
     {
