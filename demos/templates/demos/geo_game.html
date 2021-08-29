@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Harness gis for your business, acurate estimation of your crop yields, Learn ​gis with us, Our Portfolio, What our customers say">
-    <meta name="description" content="Welcome to GoalSpatial. Can you find your town? This is a leaflet demo for markers and marker clusters">
+    <meta name="description" content="Welcome to GoalSpatial. Hpw well do you know where world countries are? Play this game and find out!!">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>GoalSpatial | Getting Started With Leaflet Demo</title>
     <link rel="stylesheet" href="{% static 'web/css/nicepage.css' %}" media="screen">
@@ -14,20 +14,16 @@
     <script class="u-script" type="text/javascript" src="{% static 'web/js/nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 3.21.3, nicepage.com">
     <link rel="shortcut icon" href="{% static 'web/img/GoalSpatial2-01.jpg' %}" type="image/x-icon">
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'demos/css/game-layout.css' %}">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Oswald:200,300,400,500,600,700|Roboto+Condensed:300,300i,400,400i,700,700i">
     <link rel="stylesheet" type="text/css" href="{% static 'demos/css/style.css' %}"/>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-   <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
-   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
-   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
-   <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLWXKKP163"></script>
     <script>
@@ -89,7 +85,15 @@
           </div>
         </nav>
       </div></header>
-      <div id="map"></div>
+    <div id="b-div">
+    <div id="name-div">
+      <h4 id="text-to">Point to: <h5 id="point-to"></h5></h4>
+      
+    </div>
+    <div id="map-div"></div>
+  </div>
+  <script type="text/javascript" src="{% static 'demos/js/countries.js' %}"></script>
+  <script type="text/javascript" src="{% static 'demos/js/game-controls.js' %}"></script>
     <footer class="u-clearfix u-footer u-grey-80" id="sec-1491"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
@@ -146,7 +150,5 @@
         <span>&copy; GoalSpatial Inc</span>
       </a>
     </section>
-    <script type="text/javascript" src="{% static 'demos/js/towns.js' %}"></script>
-  <script type="text/javascript" src="{% static 'demos/js/markers-demo.js' %}"></script>
   </body>
 </html>
