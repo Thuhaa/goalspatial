@@ -29,4 +29,4 @@
       "Towns":markers,
     };
 
-    L.control.layers(baseMaps, data).addTo(map);
+L.control.layers(baseMaps, data).addTo(map);
