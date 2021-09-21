@@ -16,16 +16,17 @@
       onEachFeature:onEachFeature
     });
 
-    var baseMaps = {
-      "Open Street Map":osm,
-    };
-    var data = {
-      "Towns":towns,
-    };
 
-    L.control.layers(baseMaps, data).addTo(map);
 
     // Declare the cluster group and add markers to the clusters
     var markers = L.markerClusterGroup();
     markers.addLayer(towns);
     map.addLayer(markers);
+   var baseMaps = {
+      "Open Street Map":osm,
+    };
+    var data = {
+      "Towns":markers,
+    };
+
+    L.control.layers(baseMaps, data).addTo(map);
