@@ -41,3 +41,16 @@ class Message(models.Model):
 
 	class Meta:
 		verbose_name_plural = "Messages"
+
+class Demos(models.Model):
+	title = models.CharField(max_length=200)
+	image_url = models.CharField(max_length=200)
+	description = models.TextField(max_length=500)
+	demo_url = models.CharField(max_length=200)
+
+
+	class Meta:
+		verbose_name_plural = "Demos"
+
+	def __str__(self):
+		return self.title

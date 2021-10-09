@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Project, Course, Message
+from .models import Project, Course, Message, Demos
 from django.contrib import messages
 
 def homepage_view(request):
@@ -14,6 +14,11 @@ def learn_view(request):
 	courses = Course.objects.all()
 	context = {'courses':courses}
 	return render(request, 'web/Learn.html', context)
+
+def demo_view(request):
+	demos = Demos.objects.all()
+	context = {"demos":demos}
+	return render(request, 'web/demos.html', context)
 
 def about_view(request):
 	return render(request, 'web/About.html')
