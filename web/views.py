@@ -26,3 +26,6 @@ def contact_view(request):
 		message = Message.objects.create(email = email, name = name, text = text)
 		return redirect('homepage')
 	return render(request, 'web/Contact.html')
+
+def shop_view(request):
+	return render(request, 'web/shop.html')
